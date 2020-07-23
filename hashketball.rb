@@ -195,7 +195,6 @@ def player_stats(player_name)
 end
 
 def find_largest_shoe
-  winning_team
   largest_shoe_size = 0
   game_hash.each do |key, value|
     value[:players].each do |stats|
@@ -230,36 +229,7 @@ def most_points_scored
   most_points
 end
 
-def total_points_for_team(team)
-  total = 0 
-  game_hash.each do |key, value|
-    if value[:team_name] == team
-        value[:players].each do |keys|
-          keys.each do |points|
-            if points[0] == :points
-              total += keys[:points]
-            end
-          end 
-        end
-    end
-    total
-  end
 
-end
-  
-  
-#need to make a method that compares the two teams based on their total score.
-#alreay have method that will total all points for a team with a team name input
-#need to create two teams based on the names and compare the two
-def winning_team
-  total_points = []
-  game_hash.each do |keys, value|
-    binding.pry
-  end
-  
-  
-  
-end
 
 
 
